@@ -103,6 +103,8 @@ Desired profiles:
 3. Open that file, change the namespace to yours and rename the entrypoint function to your project's name as well.
 4. In this project, you need to add any new files you want to build to `src/leiningen/new/options/base.clj`.
 
+Learned from http://jr0cket.co.uk/2015/03/clojure-templates-are-easy-with-leiningen.html
+
 ## License
 
 ```
