@@ -7,13 +7,15 @@
                  [secretary "1.2.3"]{{/routes?}}{{#garden?}}
                  [garden "1.2.5"]{{/garden?}}{{#handler?}}
                  [compojure "1.4.0"]
-                 [ring "1.4.0"]{{/handler?}}]
+                 [ring "1.4.0"]{{/handler?}}
+                 [prismatic/schema "1.0.1"]]
 
   :source-paths ["src/clj"]
 
   :plugins [[lein-cljsbuild "1.1.1"]
             [lein-figwheel "0.4.1" :exclusions [cider/cider-nrepl]]{{#garden?}}
-            [lein-garden "0.2.6"]{{/garden?}} ]
+            [lein-garden "0.2.6"]{{/garden?}}
+            [lein-externs "0.1.5"]]
 
   :clean-targets ^{:protect false} ["resources/public/js/compiled" "target"{{#test?}}
                                     "test/js"{{/test?}}{{#garden?}}
@@ -31,7 +33,7 @@
 
   {{/garden?}}
   :cljsbuild {:builds [{:id "dev"
-                        :source-paths ["src/cljs"]
+                        :source-paths ["src/cljs" "src/cljc"]
 
                         :figwheel {:on-jsload "{{name}}.core/mount-root"}
 
@@ -56,4 +58,7 @@
                         :compiler {:main {{name}}.core
                                    :output-to "resources/public/js/compiled/app.js"
                                    :optimizations :advanced
+                                   :closure-defines {"goog.DEBUG" false}
+                                   :externs ["externs/externs.js"]
                                    :pretty-print false}}]})
+

@@ -1,5 +1,6 @@
 The MIT License (MIT)
 
+Copyright (c) 2015 Allan Jiang
 Copyright (c) 2015 Michael Thompson
 Copyright (c) 2015 Matthew Jaoudi
 Copyright (c) 2015 Dylan Paris
