@@ -97,11 +97,18 @@ Desired profiles:
 
 * `+heroku`
 
+## On customizing a template:
+1. Change `project.clj` to your own template name
+2. Change `src/leiningen/new/<project_name.clj>` to your own project name.
+3. Open that file, change the namespace to yours and rename the entrypoint function to your project's name as well.
+4. In this project, you need to add any new files you want to build to `src/leiningen/new/options/base.clj`.
+
 ## License
 
 ```
 The MIT License (MIT)
 
+Copyright © 2015 Allan Jiang
 Copyright © 2015 Matthew Jaoudi
 Copyright © 2015 Dylan Paris
 Copyright © 2015 Michael Thompson

@@ -1,4 +1,4 @@
-(ns leiningen.new.re-frame
+(ns leiningen.new.jiang-re-frame
   (:require [leiningen.new.options.base :as base]
             [leiningen.new.options.garden :as garden]
             [leiningen.new.options.handler :as handler]
@@ -30,7 +30,7 @@
    :routes? (helpers/invoke-option routes/option options)
    :test? (helpers/invoke-option test/option options)})
 
-(defn re-frame [name & options]
+(defn jiang-re-frame [name & options]
   (let [data (template-data name options)]
     (apply ->files data
            (app-files data options))))
